@@ -1,0 +1,15 @@
+/node_modules
+/.nbinfo
+/bin/*.log
+/bin/*.out
+/doc/.svn
+/.idea
+/config/customer.js
+/nohup.out
+/config/local.js
+/config/secret_key.js
+/uploads
+/files
+/public/tistory
+/.vscode
+app.yaml
