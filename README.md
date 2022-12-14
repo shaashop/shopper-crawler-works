@@ -42,3 +42,9 @@ Selenium 동작을 위한 웹드라이버 셋팅이 필요합니다.
 ### 기타
 
 과제 내용과 연관된 코드라인에 WORK-TODO 주석을 추가했습니다. 참고하여 작업하세요.
+
+##### 동작 테스트 URL
+
+```
+http://localhost:4001/api/crawl/item?shopId=1&userId=1&shopUploadId=1&crawlSource=smartstore&crawlSourceUrl=https://smartstore.naver.com/jay_fit/products/7740758208
+```
