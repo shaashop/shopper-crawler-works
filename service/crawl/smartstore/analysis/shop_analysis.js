@@ -167,7 +167,7 @@ const shopAnalysis = {
         areaCode: "area",
         areaExtract: "findElement",
         areaType: "css",
-        area: "._3oDjSvLwq9",
+        area: "._3ZEeXLwPLs",
         resultKind: "obj",
         waitSec: 0,
         isDel: "N",
@@ -186,7 +186,7 @@ const shopAnalysis = {
         areaCode: "area",
         areaExtract: "text",
         areaType: "css",
-        area: ".CxNYUPvHfB",
+        area: "._22kNQuEXmb",
         resultKind: "obj",
         waitSec: 0,
         isDel: "N",
@@ -254,13 +254,13 @@ const shopAnalysis = {
         scripts: {
           areaOptionFocusOut: {
             areaCode: "script",
-            scriptCommand: `document.querySelector('.CxNYUPvHfB').click();`,
+            scriptCommand: `document.querySelector('._22kNQuEXmb').click();`,
             waitSec: 0.2,
             isDel: "N",
           },
           areaDoAfterChooseOptionItem: {
             areaCode: "script",
-            scriptCommand: `document.querySelector('.CxNYUPvHfB').click();`,
+            scriptCommand: `document.querySelector('._22kNQuEXmb').click();`,
             waitSec: 0.2,
             isDel: "N",
           },
