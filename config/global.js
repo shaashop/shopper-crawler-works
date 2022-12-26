@@ -6,10 +6,10 @@ config.set('type', 'dev');
 config.set('domain', 'http://localhost:3000');
 config.set('adminDomain', 'http://localhost:4000');
 config.set('mysql', {
-  host: '12.34.56.789',
+  host: '127.0.0.1',
   port: 3306,
   user: 'root',
-  password: '123456789qwer',
+  password: '@xognl2864572',
   database: 'databasename',
   socketPath:
     'INSTANCE_CONNECTION_NAME:asia-northeast3:INSTANCE_CONNECTION_NAME',

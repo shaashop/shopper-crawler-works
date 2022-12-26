@@ -45,7 +45,11 @@ const CrawlUtilService = {
   },
   extractCrawlSourceName: function (paramJson) {
     const { url, crawlSource } = paramJson;
-    const shop = this.shopList.find((obj) => obj.crawlSource == crawlSource);
+    // console.log(crawlSource)
+    // console.log(this.shopList.find(crawlSource))
+    const shop = this.shopList.find((obj) => obj.crawlSource == crawlSource); 
+    // console.log(this.shopList);
+    // console.log(url);
     const crawlSourceName = url.split(shop.domain)[1];
     return crawlSourceName;
   },
