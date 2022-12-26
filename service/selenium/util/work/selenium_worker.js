@@ -5,6 +5,7 @@ const SeleniumWorker = {
     parseElFromArea: async function (driver, workJson){
         let result;
         const { area, resultKind, areaType }  = workJson;
+        // console.log(workJson)
         if (areaType == 'val')
             return area;
         if (areaType == 'css') { 
@@ -20,10 +21,12 @@ const SeleniumWorker = {
         return result;
     },
     crawlElByCss: async function (driver, area) { 
+        console.log(By.css(area))
         const el = await driver.findElement(By.css(area));	
         return el;
     },
     crawlElesByCss: async function (driver, area) { 
+        // console.log(13)
         const eles = await driver.findElements(By.css(area));	
         return eles;
     },

@@ -10,8 +10,8 @@ SHOP_ANALYSIS.analysis.areaItem.areaItemOption.areaOptions = AREA_OPTIONS;
 // console.log(os.type())
 // console.log(OS_TYPE.get("OS"));
 
-// CrawlShopSmartstoreService
-const CrawlShopSmartstoreService = {
+// CrawlShopMusinsaService
+const CrawlShopMusinsaService = {
   crawlItem: async function (req, res, paramJson) {
     console.log("#### crawlItem ####");
     const { url, shopInfo, crawlType } = paramJson;
@@ -27,4 +27,4 @@ const CrawlShopSmartstoreService = {
   },
 };
 
-module.exports = CrawlShopSmartstoreService;
+module.exports = CrawlShopMusinsaService;

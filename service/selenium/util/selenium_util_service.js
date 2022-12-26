@@ -7,13 +7,18 @@ const { By, until } = require("selenium-webdriver");
 // WORK-TODO 
 // 1. 설치한 PC 환경에 맞게 driver 설정
 const CHROME_DRIVER_PATH_WIN = path.resolve(
-  __dirname,
-  "../webdriver/chrome108/chromedriver_win32/chromedriver.exe"
+  // "./intern_HW/shopper-crawler-works/webdriver/chrome108"
+  "/usr/local/bin/chromedriver"
 );
+
+
+// console.log(__dirname)
+// console.log(CHROME_DRIVER_PATH_WIN);
+// console.log(osType)
 
 const SeleniumUtilService = {
   initDriver: async function (osType) {
-    if (osType == "win") {
+    if (osType == "Darwin") {
       const driver = await this.initDriverChrome();
       return driver;
     }
@@ -33,12 +38,16 @@ const SeleniumUtilService = {
     chromeOptions.addArguments("disable-gpu");
 
     const service = new chrome.ServiceBuilder(CHROME_DRIVER_PATH_WIN).build();
-    chrome.setDefaultService(service);
 
-    let driver = await new webdriver.Builder()
-      .forBrowser("chrome")
-      .setChromeOptions(chromeOptions)
-      .build();
+    // 이 setDefaultService 사용하면 is not a function 오류 발생하여서 createSession()으로 대함 
+    // chrome.setDefaultService(service);
+
+    let options = new chrome.Options(chromeOptions);
+
+    let driver = chrome.Driver.createSession(options, service);
+    
+    await driver.get('https://www.naver.com/');
+
     return driver;
   },
   initDriverLinux: async function () {
@@ -132,6 +141,7 @@ const SeleniumUtilService = {
     return domain;
   },
   testAreaQuery: async function (driver, targetEle, workJson) {
+    console.log(workJson)
     const result = await SeleniumTestService.test(driver, targetEle, workJson);
     return result;
   },
@@ -140,4 +150,5 @@ const SeleniumUtilService = {
     return result;
   },
 };
+
 module.exports = SeleniumUtilService;

@@ -4,6 +4,8 @@ const SeleniumWorkService = require('./selenium_work_service');
 const SeleniumTestService = {
     test: async function(driver, targetEle, testJson){
         const { testType } = testJson;
+        // console.log(testJson)
+        // console.log(1)
         let result;
         if(testType === 'compareEq'){
             const { compareTarget } = testJson;
@@ -24,6 +26,7 @@ const SeleniumTestService = {
                 key: area,
                 testJson
             })
+            
         } else if(testType === 'tryWork'){
             try {
                 result = await SeleniumWorkService.work(driver, targetEle, testJson)
@@ -37,6 +40,7 @@ const SeleniumTestService = {
     },
     tryWork: async function (driver, params) {
         const { action, key, testJson} = params
+        // console.log(params)
         try {
             if(action === 'findElement'){
                 await SeleniumWorker.parseElFromArea(driver, testJson)
